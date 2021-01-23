@@ -1,16 +1,18 @@
 import React from 'react';
-import { Link } from "react-router-dom"
+import { Navbar, Brand, ButtonCart } from './style'
 
 const Header:React.FC = () => {
+    const totalQty = 2;
     return ( 
         <header>
-            <nav className="navbar">
-                <Link className="nabar__brand" to="/">
+            <Navbar>
+                <Brand to="/">
                     <h1>My store</h1>
-                </Link>
-                <Link className="navbar__button button primary" to="cart">
-                </Link>
-            </nav>
+                </Brand>
+                <ButtonCart to="cart">
+                    Cart: { totalQty }
+                </ButtonCart>
+            </Navbar>
         </header> 
     )
 };
