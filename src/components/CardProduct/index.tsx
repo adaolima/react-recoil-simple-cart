@@ -15,14 +15,17 @@ interface ICardProduct {
 const CardProduct:React.FC<ICardProduct> = ({ course, addItem}) => {
     return (
         <Card>
-            <h4>
-                {course.id} / ${course.price}
+            <h4 className="title">
+                {course.id}
             </h4>
+            <span className="price">
+                ${course.price}
+            </span>
             <button
                 className="button"
                 onClick={() => addItem(course as ICart)}
             >
-                Add
+                Add +
             </button>
         </Card>  
     )
