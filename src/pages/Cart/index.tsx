@@ -5,7 +5,7 @@ const Cart:React.FC = () => (
     <>
         <Helmet>
             <title> Your Cart </title>
-            <meta name="description" content="These amazing products area almost yours." />
+            <meta name="description" content="These amazing courses almost yours." />
         </Helmet>
         <h1>Cart</h1> 
     </>

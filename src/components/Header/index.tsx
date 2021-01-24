@@ -7,7 +7,7 @@ const Header:React.FC = () => {
         <header>
             <Navbar>
                 <Brand to="/">
-                    <h1>My store</h1>
+                    <h1>My Courses</h1>
                 </Brand>
                 <ButtonCart to="cart">
                     Cart: { totalQty }
