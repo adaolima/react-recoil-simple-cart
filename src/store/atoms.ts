@@ -1,10 +1,10 @@
-import { atom } from "recoil";
+import { atom, RecoilState } from "recoil";
 
 
-export interface ICart {
+export interface ICart{
     id: string
     price: number
-    qty?: number
+    qty: number
 }
 
 export const cart = atom({
