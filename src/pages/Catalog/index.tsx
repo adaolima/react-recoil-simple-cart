@@ -1,6 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { useAddItem } from '../../store';
 import { ICart } from '../../store/atoms';
+import { CatalogContainer } from './style';
+import CardProduct from '../../components/CardProduct'
 
 const coursesId = [
     "How to Learn",
@@ -14,33 +17,21 @@ const coursesId = [
     "Vuex",
 ];
 
-const courses: ICart[] = coursesId.map((id, index) => ({ id, price: index + 1 }));
+const courses = coursesId.map((id, index) => ({ id, price: index + 1 }));
 
 const Catalog:React.FC = () => {
-    const addItem = () => {};
+    const addItem = useAddItem();
     return ( 
         <>
             <Helmet>
                 <title>Courses catalog</title>
                 <meta name="description" content="Amazing courses to improve your skills." />
             </Helmet>
-            <div className="catalog">
-                <div className="courses">
-                    {courses.map((course) => (
-                        <div key={course.id} className="course">
-                            <h4>
-                                {course.id} / ${course.price}
-                            </h4>
-                            <button
-                                className="button"
-                                onClick={() => {}}
-                            >
-                                Add
-                            </button>
-                        </div>  
-                    ))}
-                </div>
-            </div>
+            <CatalogContainer>
+                {courses.map((course) => (
+                    <CardProduct course={course} addItem={addItem} key={course.id} />
+                ))}
+            </CatalogContainer>
         </>
     )
 };
