@@ -1,8 +1,10 @@
-import { atom, RecoilState } from "recoil";
+import { atom } from "recoil";
 
-interface ICart {
-    key: string
-    default: any[]
+
+export interface ICart {
+    id: string
+    price: number
+    qty?: number
 }
 
 export const cart = atom({
