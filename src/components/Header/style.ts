@@ -9,6 +9,7 @@ export const Navbar =  styled.nav`
     height: 70px;
     flex-wrap: nowrap;
     padding: 5px;
+    border-bottom: 1px solid lightgrey;
 `;
 
 export const Brand = styled(Link)`
