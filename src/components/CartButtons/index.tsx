@@ -1,10 +1,15 @@
 import React from 'react';
+import { useAddItem, useDecreaseItem, useRemoveItem } from "../../store";
+import { ICart } from '../../store/atoms'
 
+interface IParamCartButtons {
+    item: ICart
+}
 
-const CartButtons:React.FC = ({ item }) => {
-    const add = () => {};
-    const remove = () => {};
-    const decrease = () => {};
+const CartButtons:React.FC<IParamCartButtons> = ({ item }:IParamCartButtons) => {
+    const add = useAddItem();
+    const remove = useRemoveItem();
+    const decrease = useDecreaseItem();
 
     return ( 
         <div className="group-buttons">
