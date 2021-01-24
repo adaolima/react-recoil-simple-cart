@@ -1,12 +1,18 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+export const HeaderContainer = styled.header`
+    height:70px;
+    padding: .5rem;
+    margin-bottom: 1rem;
+`;
+
 export const Navbar =  styled.nav`
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 70px;
+    height: 100%;
     flex-wrap: nowrap;
     padding: 5px;
     border-bottom: 1px solid lightgrey;
@@ -15,7 +21,9 @@ export const Navbar =  styled.nav`
 export const Brand = styled(Link)`
     text-decoration: none;
     padding: 5px;
-    margin-left: 10px;
+    &:hover {
+        opacity: .7;
+    }
 `;
 
 export const ButtonCart = styled(Link)`
@@ -24,6 +32,9 @@ export const ButtonCart = styled(Link)`
     background-color: blue;
     color: #fff;
     font-size: 1rem;
+    font-weight: bold;
     display: inline-block;
-    margin-right: 15px;
+    &:hover {
+        opacity: .7;
+    }
 `;

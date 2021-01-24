@@ -1,10 +1,12 @@
 import React from 'react';
-import { Navbar, Brand, ButtonCart } from './style'
+import { useRecoilValue } from 'recoil';
+import { HeaderContainer , Navbar, Brand, ButtonCart } from './style'
+import { cartState } from '../../store';
 
 const Header:React.FC = () => {
-    const totalQty = 2;
+    const { totalQty } = useRecoilValue(cartState);
     return ( 
-        <header>
+        <HeaderContainer>
             <Navbar>
                 <Brand to="/">
                     <h1>My Courses</h1>
@@ -13,7 +15,7 @@ const Header:React.FC = () => {
                     Cart: { totalQty }
                 </ButtonCart>
             </Navbar>
-        </header> 
+        </HeaderContainer> 
     )
 };
 
